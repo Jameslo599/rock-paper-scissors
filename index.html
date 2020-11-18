@@ -34,10 +34,12 @@
         playerSelection = playerSelection.toLowerCase();
         let computerSelection = computerPlay();
         console.log(playRound(playerSelection, computerSelection));
-        function game() {
-                playRound(playerSelection, computerSelection);
+        let game = (round) => {
+                for(let round = 0; round < 5; round++) {
+                console.log(playRound(playerSelection, computerSelection));
+                }
         }
-        console.log(game());
+        
     </script>
 
 </body>
