@@ -7,41 +7,60 @@
     </head>
 <body>
     <script>
-        // Declare array of weapon attributes
-        const weapons = {
-            rock: {weakTo: 'paper', strongTo: 'scissors'},
-            paper: {weakTo: 'scissors', strongTo: 'rock'},
-            scissors: {weakTo: 'rock', strongTo: 'paper'}
-        };
-        // Declare array of enemy weapons
-        const enemyChoice = ['rock', 'paper', 'scissors'];
-        // Declare computerPlay function for computer selection in Rock Paper Scissors
-        function computerPlay() {
-            // Return random array element
-            const randomElement = enemyChoice[Math.floor(Math.random()*enemyChoice.length)];
-                return randomElement;
+        let myScore = 0;
+        let enemyScore = 0;
+        let enemyChoices = ["rock", "paper", "scissors"];
+
+        function randomChoice() {
+            return enemyChoices[Math.floor(Math.random()*enemyChoices.length)];
         }
-        function playRound(playerSelection, computerSelection) {
-            if (weapons[playerSelection].strongTo === computerSelection) {
-                return 'You win!';
-            } else if (weapons[playerSelection].weakTo === computerSelection) {
-                return 'You lose!';
+        function playRound(playerSelection, enemySelection) {
+        if (playerSelection === "rock" && enemySelection === "scissors") {
+            myScore++;
+            return "You Win! Rock beats Scissors!";
+        }  else if (playerSelection === "rock" && enemySelection === "paper") {
+            enemyScore++;
+            return "You Lose! Paper beats Rock!";
+        }  else if (playerSelection === "paper" && enemySelection === "scissors") {
+            enemyScore++;
+            return "You Lose! Scissors beats Paper!";
+        }  else if (playerSelection === "paper" && enemySelection === "rock") {
+            myScore++;
+            return "You Win! Paper beats Rock!";
+        }  else if (playerSelection === "scissors" && enemySelection === "paper") {
+            myScore++;
+            return "You Win! Scissors beats Paper!";
+        }  else if (playerSelection === "scissors" && enemySelection === "rock") {
+            enemyScore++;
+            return "You Lose! Rock beats Scissors!";
+        }  else {
+            myScore++;
+            enemyScore++;
+            return "You Tie! Equal weapons!";
+        }  
+        }
+        function winner() {
+            if (myScore > enemyScore) {
+                return "You win this game! Good job!";
+            } else if (myScore < enemyScore) {
+                return "Game over! Better luck next time!";
             } else {
-                return 'Tie';
+                return "Draw! Better luck next time!";
             }
         }
-        let playerSelection = 'scissors';
-        playerSelection = playerSelection.toLowerCase();
-        let computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection));
-        let game = (round) => {
-                for(let round = 0; round < 5; round++) {
-                console.log(playRound(playerSelection, computerSelection));
-                }
-        }
         
+        function game(round) {
+            for(let round = 0; round < 5; round++) {
+            let playerSelection = prompt("Welcome to Rock Paper Scissors!", "Enter 'rock', 'paper' or 'scissors'" ).toLowerCase();
+            const enemySelection = randomChoice();
+            console.log(playRound(playerSelection, enemySelection));
+            console.log("your score = "+ myScore);
+            console.log("enemy's score = "+ enemyScore);
+            }
+            return winner();
+        }
     </script>
-
+        
 </body>
 
 </html>
