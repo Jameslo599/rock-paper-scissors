@@ -7,13 +7,17 @@
     </head>
 <body>
     <script>
+        // Declare player score
         let myScore = 0;
+        // Declare computer score
         let enemyScore = 0;
+        // Declare computer weapon choices
         let enemyChoices = ["rock", "paper", "scissors"];
-
+        // Randomize computer choice selection
         function randomChoice() {
             return enemyChoices[Math.floor(Math.random()*enemyChoices.length)];
         }
+        // All possible matchup scenarios with point allocations
         function playRound(playerSelection, enemySelection) {
         if (playerSelection === "rock" && enemySelection === "scissors") {
             myScore++;
@@ -39,6 +43,7 @@
             return "You Tie! Equal weapons!";
         }  
         }
+        // Describes all game endings
         function winner() {
             if (myScore > enemyScore) {
                 return "You win this game! Good job!";
@@ -48,7 +53,7 @@
                 return "Draw! Better luck next time!";
             }
         }
-        
+        // Plays five rounds of RPS
         function game(round) {
             for(let round = 0; round < 5; round++) {
             let playerSelection = prompt("Welcome to Rock Paper Scissors!", "Enter 'rock', 'paper' or 'scissors'" ).toLowerCase();
