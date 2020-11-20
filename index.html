@@ -14,7 +14,7 @@
         // Declare computer weapon choices
         let enemyChoices = ["rock", "paper", "scissors"];
         // Randomize computer choice selection
-        function randomChoice() {
+        function randomizeChoices() {
             return enemyChoices[Math.floor(Math.random()*enemyChoices.length)];
         }
         // All possible matchup scenarios with point allocations
@@ -44,7 +44,7 @@
         }  
         }
         // Describes all game endings
-        function winner() {
+        function declareWinner() {
             if (myScore > enemyScore) {
                 return "You win this game! Good job!";
             } else if (myScore < enemyScore) {
@@ -54,15 +54,16 @@
             }
         }
         // Plays five rounds of RPS
-        function game(round) {
+        function playGame(round) {
             for(let round = 0; round < 5; round++) {
-            let playerSelection = prompt("Welcome to Rock Paper Scissors!", "Enter 'rock', 'paper' or 'scissors'" ).toLowerCase();
-            const enemySelection = randomChoice();
+            let playerSelection = prompt("Welcome to Rock Paper Scissors!", 
+                    "Enter 'rock', 'paper' or 'scissors'" ).toLowerCase();
+            const enemySelection = randomizeChoices();
             console.log(playRound(playerSelection, enemySelection));
             console.log("your score = "+ myScore);
             console.log("enemy's score = "+ enemyScore);
             }
-            return winner();
+            return declareWinner();
         }
     </script>
         
