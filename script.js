@@ -52,6 +52,11 @@ function playGame() {
     const enemySelection = randomizeChoices();
     console.log(playRound(playerSelection, enemySelection));
     console.log(declareWinner());
+    if (myScore === 5 || enemyScore === 5) {
+        document.getElementById("rock").removeEventListener("click", playGame, false);
+        document.getElementById("paper").removeEventListener("click", playGame, false);
+        document.getElementById("scissors").removeEventListener("click", playGame, false);
+    }
 }   
 // Allow player to play one round by clicking one of three buttons
 document.getElementById("rock").onclick = function(e) {
