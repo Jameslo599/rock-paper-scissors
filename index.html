@@ -6,67 +6,33 @@
         <title>Rock Paper Scissors</title>
     </head>
 <body>
-    <script>
-        // Declare player score
-        let myScore = 0;
-        // Declare computer score
-        let enemyScore = 0;
-        // Declare computer weapon choices
-        let enemyChoices = ["rock", "paper", "scissors"];
-        // Randomize computer choice selection
-        function randomizeChoices() {
-            return enemyChoices[Math.floor(Math.random()*enemyChoices.length)];
-        }
-        // All possible matchup scenarios with point allocations
-        function playRound(playerSelection, enemySelection) {
-        if (playerSelection === "rock" && enemySelection === "scissors") {
-            myScore++;
-            return "You Win! Rock beats Scissors!";
-        }  else if (playerSelection === "rock" && enemySelection === "paper") {
-            enemyScore++;
-            return "You Lose! Paper beats Rock!";
-        }  else if (playerSelection === "paper" && enemySelection === "scissors") {
-            enemyScore++;
-            return "You Lose! Scissors beats Paper!";
-        }  else if (playerSelection === "paper" && enemySelection === "rock") {
-            myScore++;
-            return "You Win! Paper beats Rock!";
-        }  else if (playerSelection === "scissors" && enemySelection === "paper") {
-            myScore++;
-            return "You Win! Scissors beats Paper!";
-        }  else if (playerSelection === "scissors" && enemySelection === "rock") {
-            enemyScore++;
-            return "You Lose! Rock beats Scissors!";
-        }  else {
-            myScore++;
-            enemyScore++;
-            return "You Tie! Equal weapons!";
-        }  
-        }
-        // Describes all game endings
-        function declareWinner() {
-            if (myScore > enemyScore) {
-                return "You win this game! Good job!";
-            } else if (myScore < enemyScore) {
-                return "Game over! Better luck next time!";
-            } else {
-                return "Draw! Better luck next time!";
-            }
-        }
-        // Plays five rounds of RPS
-        function playGame(round) {
-            for(let round = 0; round < 5; round++) {
-            let playerSelection = prompt("Welcome to Rock Paper Scissors!", 
-                    "Enter 'rock', 'paper' or 'scissors'" ).toLowerCase();
-            const enemySelection = randomizeChoices();
-            console.log(playRound(playerSelection, enemySelection));
-            console.log("your score = "+ myScore);
-            console.log("enemy's score = "+ enemyScore);
-            }
-            return declareWinner();
-        }
-    </script>
-        
+    <header id="header">
+        <link href="css/normalize.css" rel="stylesheet" type="text/css" media="all">
+        <link href="css/main.css" rel="stylesheet" type="text/css" media="all">
+    </header>
+    <div class = "titles">
+        <h1>Rock Paper Scissors</h1>
+        <h2>The first to five points wins!</h2>
+        <h1>Score</h1>
+    </div>
+    <div class = 'names'>
+        <h1>Player</h1>
+        <h1 id = "playerScore"></h1>
+        <h1>:</h1>
+        <h1 id = "enemyScore"></h1>
+        <h1>Computer</h1>
+    </div>
+    <div id = "resetButton">
+    </div>
+    <div id = "buttons">
+        <button id = "rock" class = "button">Rock</button>
+        <button id = "paper" class = "button">Paper</button>
+        <button id = "scissors" class = "button">Scissors</button>
+    </div>
+    <div>
+        <h2 id= "resultsLog"> </h2>
+    </div>
+    
 </body>
-
+<script src="script.js"></script>
 </html>
