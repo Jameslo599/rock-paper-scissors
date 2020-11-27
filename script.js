@@ -51,7 +51,6 @@ function declareWinner() {
 function playGame() {        
     const enemySelection = randomizeChoices();
     console.log(playRound(playerSelection, enemySelection));
-    console.log("Score: "+ myScore + "-" + enemyScore);
     console.log(declareWinner());
 }   
 // Allow player to play one round by clicking one of three buttons
@@ -76,6 +75,7 @@ document.getElementById("scissors").addEventListener("click", resetGame, false);
 document.getElementById("scissors").addEventListener("click", playerCount, false);
 document.getElementById("scissors").addEventListener("click", enemyCount, false);
 
+// Updates player score as the game progresses
 let playerNumber = document.createElement("h1");
 let playerScore = document.createTextNode(myScore);
 playerNumber.appendChild(playerScore);
@@ -84,6 +84,7 @@ function playerCount() {
     return document.getElementById("playerScore").innerHTML = myScore;
 }
 
+// Updates enemy score as the game progresses
 let enemyNumber = document.createElement("h1");
 let computerScore = document.createTextNode(enemyScore);
 enemyNumber.appendChild(computerScore);
@@ -92,6 +93,7 @@ function enemyCount() {
     return document.getElementById("enemyScore").innerHTML = enemyScore;
 }
 
+// Displays round results 
 window.console = {
     log: function(str) {
         let results = document.createElement("div");
@@ -100,6 +102,7 @@ window.console = {
     }
 }
 
+// Reset the game after five points are reached
 let againButton = document.createElement("button");
 let againText = document.createTextNode("Play Again");
 againButton.appendChild(againText);
@@ -109,6 +112,8 @@ function resetGame() {
         
     }
 }
-
-
+function refresh() {
+    window.location.reload(false);
+}
+document.getElementById("resetButton").addEventListener("click", refresh, false);
 

@@ -30,5 +30,6 @@ body {
 
 #resultsLog {
     text-align: center;
-    color: rgb(64, 187, 48);
+    color: rgb(219, 219, 219);
+    line-height: 1cm;
 }
