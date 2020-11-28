@@ -42,6 +42,7 @@ body {
     border-radius: 20%;
     color: rgb(197, 112, 197);
     transition: all 0.2s ease;
+    outline: none;
 }
 
 .clicking {
