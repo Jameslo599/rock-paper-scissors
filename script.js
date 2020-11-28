@@ -122,3 +122,27 @@ function refresh() {
 }
 document.getElementById("resetButton").addEventListener("click", refresh, false);
 
+// Button press animation
+const buttonR = document.getElementById("rock");
+const buttonP = document.getElementById("paper");
+const buttonS = document.getElementById("scissors");
+
+const animationR = document.querySelector("#rock");
+const animationP = document.querySelector("#paper");
+const animationS = document.querySelector("#scissors");
+
+function playAnimation() {
+    this.classList.add("clicking");
+}
+
+function removeTransition() {
+    this.classList.remove("clicking")
+}
+
+buttonR.addEventListener('click', playAnimation);
+buttonP.addEventListener('click', playAnimation);
+buttonS.addEventListener('click', playAnimation);
+
+animationR.addEventListener('transitionend', removeTransition);
+animationP.addEventListener('transitionend', removeTransition);
+animationS.addEventListener('transitionend', removeTransition);
