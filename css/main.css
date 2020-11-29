@@ -1,8 +1,8 @@
 
 body {
     background-color: rgb(23, 59, 126);
+    margin: auto;
 }
-
 .titles {
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -12,13 +12,18 @@ body {
 .names {
     display: flex;
     justify-content: space-between;
-    margin-right: 3em;
-    margin-left: 6em;
+    margin-right: 1em;
+    margin-left: 1em;
     color: rgb(197, 112, 197);
     border:solid rgba(0, 0, 0, 0.425);
     padding-right: 2ch;
     padding-left: 2ch;
     background-color: rgba(255, 255, 255, 0.89);
+}
+
+.names h1 {
+    font-size: 23px;
+    ;
 }
 
 #resetButton {
@@ -68,8 +73,19 @@ body {
     line-height: 1cm;
 }
 @media only screen and (min-width: 1200px) {
-    body {
-        margin-left:auto;
-        margin-right:auto;
-        width:960px;
-    }}
+body {
+    margin-left:auto;
+    margin-right:auto;
+    width:960px;     
+}
+.names {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 3em;
+    margin-left: 6em;
+    color: rgb(197, 112, 197);
+    border:solid rgba(0, 0, 0, 0.425);
+    padding-right: 2ch;
+    padding-left: 2ch;
+    background-color: rgba(255, 255, 255, 0.89);
+}}
