@@ -1,8 +1,6 @@
+
 body {
     background-color: rgb(23, 59, 126);
-    margin-left:auto;
-    margin-right:auto;
-    width:960px;
 }
 
 .titles {
@@ -69,3 +67,9 @@ body {
     color: rgb(219, 219, 219);
     line-height: 1cm;
 }
+@media only screen and (min-width: 1200px) {
+    body {
+        margin-left:auto;
+        margin-right:auto;
+        width:960px;
+    }}
