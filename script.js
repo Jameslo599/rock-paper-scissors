@@ -109,7 +109,8 @@ window.console = {
 
 // Reset the game after five points are reached
 let againButton = document.createElement("button");
-let againText = document.createTextNode("Play Again");
+againButton.setAttribute('id', 'resetGame');
+let againText = document.createTextNode("Play Again!");
 againButton.appendChild(againText);
 function resetGame() {
     if (myScore === 5 || enemyScore === 5) {
@@ -127,10 +128,6 @@ const buttonR = document.getElementById("rock");
 const buttonP = document.getElementById("paper");
 const buttonS = document.getElementById("scissors");
 
-const animationR = document.querySelector("#rock");
-const animationP = document.querySelector("#paper");
-const animationS = document.querySelector("#scissors");
-
 function playAnimation() {
     this.classList.add("clicking");
 }
@@ -139,10 +136,14 @@ function removeTransition() {
     this.classList.remove("clicking")
 }
 
-buttonR.addEventListener('click', playAnimation);
-buttonP.addEventListener('click', playAnimation);
-buttonS.addEventListener('click', playAnimation);
+buttonR.addEventListener("click", playAnimation);
+buttonP.addEventListener("click", playAnimation);
+buttonS.addEventListener("click", playAnimation);
 
-animationR.addEventListener('transitionend', removeTransition);
-animationP.addEventListener('transitionend', removeTransition);
-animationS.addEventListener('transitionend', removeTransition);
+buttonR.addEventListener("transitionend", removeTransition);
+buttonP.addEventListener("transitionend", removeTransition);
+buttonS.addEventListener("transitionend", removeTransition);
+
+//"Play again" button press animation
+againButton.addEventListener("click", playAnimation);
+againButton.addEventListener("transitionend", removeTransition);

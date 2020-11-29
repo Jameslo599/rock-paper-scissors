@@ -7,7 +7,8 @@ body {
 
 .titles {
     text-align: center;
-    color: rgb(245, 245, 245);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(197, 112, 197);
 }
 
 .names {
@@ -26,8 +27,19 @@ body {
     text-align: center;
 }
 
+#resetGame {
+    margin-top: 2em;
+    width: 6em;
+    height: 3em;
+    border: 0.1rem solid rgb(197, 112, 197);
+    color: rgb(197, 112, 197);
+    transition: all 0.2s ease;
+    outline: none;
+}
+
 #buttons {
     text-align: center;
+    
 }
 
 .button {
